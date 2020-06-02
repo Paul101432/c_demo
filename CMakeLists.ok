@@ -5,15 +5,14 @@ set(SOURCE_FILES src/main.cpp )
 set(CMAKE_CXX_STANDARD 11)
 
 set(INC_DIR ./include/)
+set(LINK_DIR ./libs/window/x86/)
 
 
 
 
 include_directories(${INC_DIR}) #引入头文件环境变量目录，cpp或者h文件中#include会自动去搜索这些头文件
-link_libraries(
-        "..\\libs\\windows\\x86\\ft\\ShuttleCsp11_3000GM.lib"
-
-)
+link_directories(${LINK_DIR})   #获取该目录下的相对于的dylib  so  dll文件
+link_libraries("E:\\code-c\\c_demo\\libs\\windows\\x86\\ft\\ShuttleCsp11_3000GM.lib")
 ## E:\\code-c\\c_demo\\libs\\windows\\x64\\ft
 
 # 生成的可执行文件
@@ -21,6 +20,6 @@ add_executable(c_demo  ${SOURCE_FILES})
 
 
 
-target_link_libraries(${PROJECT_NAME})
+target_link_libraries(${PROJECT_NAME} "E:\\code-c\\c_demo\\libs\\windows\\x86\\ft\\ShuttleCsp11_3000GM.lib")
 # ${LINK_DIR} TODO 第三方包加入失败 xmake可以
 
