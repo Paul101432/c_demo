@@ -19,5 +19,4 @@ target("console")
     add_links("libcrypto")
     add_links("ShuttleCsp11_3000GM")
     add_files("src/main.cpp")
-    add_files("src/Base64.cpp")
 
